@@ -49,4 +49,4 @@ for d1, d2 in zip(dir1,dir2):
         print("Different Files are")
         print(dcmp.diff_files)
 
-print("Directories seem identical")
+#print("Directories seem identical")
