@@ -43,5 +43,8 @@ for d1, d2 in zip(dir1,dir2):
         print("Found mismatch in")
         print(d1)
         print(d2)
+        dcmp = dircmp(d1,d2)
+        print("Different Files are")
+        print(dcmp.diff_files)
 
 print("Directories seem identical")
