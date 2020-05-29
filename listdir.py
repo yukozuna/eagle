@@ -1,3 +1,6 @@
+#this script takes the given path as a cli argument and parses all the subdirectories
+#if it finds any two with the same files, it will print the two directories
+
 import sys
 import os
 from filecmp import dircmp
