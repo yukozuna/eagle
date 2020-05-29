@@ -8,7 +8,7 @@ from filecmp import dircmp
 def dir_compare(d1,d2):
     dcmp = dircmp(d1, d2)
     if (dcmp.left_list == dcmp.same_files) and (dcmp.right_list == dcmp.same_files):
-        return True
+        return False if len(dcmp.same_files) == 0 else True #don't need empty directories
     else:
         return False
 
