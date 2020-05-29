@@ -33,3 +33,15 @@ dir2 = fast_scandir(path2)
 
 print('Found',len(dir1),'subdirectories in path 1' )
 print('Found',len(dir2),'subdirectories in path 2' )
+
+if len(dir1) != len (dir2):
+    print('Number of subfolders not equal. Exiting')
+    exit()
+
+for d1, d2 in zip(dir1,dir2):
+    if dir_compare(d1,d2) == False:
+        print("Found mismatch in")
+        print(d1)
+        print(d2)
+
+print("Directories seem identical")
