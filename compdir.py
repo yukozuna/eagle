@@ -40,10 +40,12 @@ if len(dir1) != len (dir2):
 
 for d1, d2 in zip(dir1,dir2):
     if dir_compare(d1,d2) == False:
+        dcmp = dircmp(d1,d2)
         print("Found mismatch in")
         print(d1)
+        print(dcmp.left_only)
         print(d2)
-        dcmp = dircmp(d1,d2)
+        print(dcmp.right_only)
         print("Different Files are")
         print(dcmp.diff_files)
 
