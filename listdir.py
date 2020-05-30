@@ -40,6 +40,4 @@ for opath in dir:
         #print ('ipath is',ipath)
         if (opath != ipath) and (os.path.split(opath)[1] == os.path.split(ipath)[1]):
             if dir_compare(opath,ipath):
-                print('Found a match')
-                print(opath)
-                print(ipath)
+                print('Found a match,'+opath+','+ipath)
