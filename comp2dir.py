@@ -27,9 +27,9 @@ if os.path.isdir(path2) == False:
     exit()
 
 dir1 = fast_scan1dir(path1)
-print(dir1)
+#print(dir1)
 dir2 = fast_scan1dir(path2)
-print(dir2)
+#print(dir2)
 
 print('Found',len(dir1),'subdirectories in path 1' )
 print('Found',len(dir2),'subdirectories in path 2' )
