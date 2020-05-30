@@ -7,7 +7,7 @@ from filecmp import dircmp
 def dir_compare(d1,d2):
     dcmp = dircmp(d1, d2)
     if (dcmp.left_list == dcmp.same_files) and (dcmp.right_list == dcmp.same_files):
-        return False if len(dcmp.same_files) == 0 else True #don't need empty directories
+        return True
     else:
         return False
 
@@ -48,5 +48,7 @@ for d1, d2 in zip(dir1,dir2):
         print(dcmp.right_only)
         print("Different Files are")
         print(dcmp.diff_files)
+        print("Common Files are")
+        print(dcmp.common_files)
 
 #print("Directories seem identical")
