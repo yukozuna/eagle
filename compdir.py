@@ -6,7 +6,7 @@ from filecmp import dircmp
 
 def dir_compare(d1,d2):
     dcmp = dircmp(d1, d2)
-    if (dcmp.left_list == dcmp.same_files) and (dcmp.right_list == dcmp.same_files):
+    if (len(dcmp.left_only) == 0) and (len(dcmp.right_only) == 0) and (len(dcmp.diff_files) == 0):
         return True
     else:
         return False
@@ -38,17 +38,21 @@ if len(dir1) != len (dir2):
     print('Number of subfolders not equal. Exiting')
     exit()
 
+mismatch = False
+
 for d1, d2 in zip(dir1,dir2):
     if dir_compare(d1,d2) == False:
         dcmp = dircmp(d1,d2)
         print("Found mismatch in")
         print(d1)
-        print(dcmp.left_list)
+        print(dcmp.left_only)
         print(d2)
-        print(dcmp.right_list)
+        print(dcmp.right_only)
         print("Different Files are")
         print(dcmp.diff_files)
-        print("Common Files are")
-        print(dcmp.common_files)
+        mismatch = True
 
-#print("Directories seem identical")
+if mismatch:
+    print("Found differences")
+else:
+    print("Directories seem identical")
