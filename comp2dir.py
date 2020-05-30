@@ -38,8 +38,9 @@ match = False
 
 for d1 in dir1:
     for d2 in dir2:
-        print("Comparing",d1,"and",d2)
+        print("Trying",os.path.split(d1),"and",os.path.split(d2))
         if os.path.split(d1) == os.path.split(d2):
+            print("Found",os.path.split(d1),"and",os.path.split(d2))
             if dir_compare(d1,d2):
                 print(d1 + ' in both folders is identical')
                 match = True
